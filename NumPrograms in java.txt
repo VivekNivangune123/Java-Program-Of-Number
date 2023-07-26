@@ -1,0 +1,532 @@
+
+Q-1:- Write a java program to find factors of given numbers.
+
+package Practice;
+import java.util.Scanner;
+
+public class Q1Factors {
+	public static void factors(int n) {
+		System.out.println("Factors are");
+		for(int i=1;i<=n;i++) {
+			if(n%i==0) {
+				System.out.print(i+ " ");
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter A Number");
+		int n= sc.nextInt();
+		factors(n);
+		
+	}
+
+}
+
+==========================================================================================================================
+
+Q-2:- Write a java program to count digits in number.
+
+package Practice;
+import java.util.Scanner;
+
+public class Q2CountDigit {
+	public int CountDigit(int n) {
+		int count =0;                                                    
+		for(;n>0;n=n/10) {                                                  
+			count++;                                                      
+		}     
+		System.out.println(count +" is digit count");                       
+		return count;                                                       
+	}
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter A Number");
+		int n= sc.nextInt();
+		Q2CountDigit c= new Q2CountDigit();
+		System.out.println(c.CountDigit(n));	
+
+	}
+
+}
+
+==========================================================================================================================
+
+Q-3:- Write a java program to swap variable value using 3rd variable.
+
+package Practice;
+import java.util.Scanner;
+
+public class Q3SwapValueOfVariable {
+	public static void SwapValueOfVariable(int a,int b) {
+		int c= a; //temporary variable for storing the value of a
+		a=b;   //swapping value with b
+		b=c;  //swapping value with a using temporary variable c
+		System.out.println("a=" +a);
+		System.out.println("b=" +b);
+	}
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Number a");
+		int a= sc.nextInt();
+		System.out.println("Enter Number b");
+		int b= sc.nextInt();
+		SwapValueOfVariable(a,b);
+	}
+
+}
+
+==========================================================================================================================
+
+Q-4:- Write a java program to swap variable value without using 3rd variable.
+
+package Practice;
+import java.util.Scanner;
+
+public class Q4SwapWithout3rdVariable {
+	public static void SwapWithout3rdVariable(int a, int b){
+		a=a+b;
+		b=a-b;
+		a=a-b;
+		System.out.println("a= "+a);
+		System.out.println("b= "+b);
+	}
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter number a");
+		int a= sc.nextInt();
+		System.out.println("Enter number b");
+		int b= sc.nextInt();
+		SwapWithout3rdVariable(a,b);
+	}
+
+}
+
+==========================================================================================================================
+
+Q-5:- Write a java program to find prime number.
+
+package Practice;
+import java.util.Scanner;
+
+public class Q5PrimeNumber {
+	public static boolean Prime(int n) {
+	int count=0;
+	for(int i=1;i<=n;i++) {
+		if(n%i==0) {
+			count++;
+		}
+	}if(count==2) {
+		return true;
+	}else {
+		return false;
+	}
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enetr a number");
+		int n= sc.nextInt();
+		boolean res= Prime(n);
+		System.out.println(res);
+		
+	}
+
+}
+
+==========================================================================================================================
+
+Q-6:- Write a java program to reverse a number.
+
+package Practice;
+import java.util.Scanner;
+public class Q6ReverseNumber {
+	public static int reverseNumber(int n) {
+		int rev=0;
+		
+		//using while loop
+		//while(n>0) {
+		//	int last_digit= n%10;
+		//	rev=rev*10+last_digit;
+			//n=n/10;
+		//}
+		//System.out.println(rev);
+		
+		
+		//using for loop
+		//for (;n>0;n=n/10) {
+		//	int last_digit= n%10;
+		//	rev=rev*10+last_digit;
+		//}
+		
+		//using do while loop
+		do {
+			int last_digit= n%10;
+			rev=rev*10+last_digit;
+			n=n/10;
+		}while(n>0);
+		return rev;
+	}
+	
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter A Number");
+		int n= sc.nextInt();
+		System.out.println(reverseNumber(n));
+	}
+
+}
+
+==========================================================================================================================
+
+Q-7:- Write a java program to find factorial od given number.
+
+package Practice;
+import java.util.Scanner;
+
+public class Q7Factorial {
+	public static int factorial(int a) {
+		
+		//using for loop
+		int fact=1;
+		//for(int i=1;i<=a;i++) {
+		//	fact= i*fact;
+		//}
+		
+		//using while loop
+		//while(a>0) {
+		//	fact= a*fact;
+		//	a--;
+		//}
+		
+		//using do while loop
+		do {
+			fact= a*fact;
+			a--;
+		}while(a>0);
+		return fact;
+	}
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter A Number");
+		int a= sc.nextInt();
+		System.out.println(factorial(a));
+		
+	}
+
+}
+
+==========================================================================================================================
+
+Q-8:- Write a java program to check given number is perfect number or not.
+
+package Practice;
+import java.util.Scanner;
+
+// Perfect numbers:-
+// Eg 6= 1 2 3 6(exclude 6)= 1+2+3= 6
+
+public class Q8Perfect {
+	public static boolean isPerfect(int n){
+		int sum=0;
+		
+		for(int i=1;i<n;i++) {
+			if(n%i==0) {
+				sum= sum+i;
+			}
+		}
+		if(sum==n) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter a Number");
+		int n= sc.nextInt();
+		System.out.println(isPerfect(n));
+
+	}
+
+}
+
+==========================================================================================================================
+
+Q-9:- Write a java program to check given number is strong number or not.
+
+package Practice;
+import java.util.Scanner;
+
+// Strong numbers:-
+// Eg 145= 1!+4!+5!= 1+(4*3*2*1)+(5*4*3*2*1)= 1+24+120= 145
+
+public class Q9Strong {
+	public static boolean Strong(int n) {
+		int sum=0;
+		int temp=n;
+		
+		
+		while(n>0) {
+			int lastdigit=n%10;
+			int fact=1;
+			while(lastdigit>0) {
+				fact= fact*lastdigit;
+				lastdigit--;
+			}
+			sum=sum+fact;
+			n=n/10;
+		}
+		if(sum==temp) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter A Number");
+		int n= sc.nextInt();
+		System.out.println(Strong(n));
+
+	}
+
+}
+
+==========================================================================================================================
+
+Q-10:- Write a java program to check given number is spine/spy number or not.
+
+package Practice;
+import java.util.Scanner;
+
+// Spine or Spy numbers:-
+// Eg:- 1124 sum= 1+1+2+4=8  &  product= 1*1*2*4=8  that is sum==product
+
+public class Q10Spine {
+	public static boolean isSpine(int n) {
+		int sum=0;
+		int prod=1;
+		for(;n>0;n=n/10) {
+			int lastdigit=n%10;
+			sum=sum+lastdigit;
+			prod=prod*lastdigit;
+		}
+		if(sum==prod) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter A Number");
+		int n=sc.nextInt();	
+		System.out.println(isSpine(n));
+	}
+
+}
+
+==========================================================================================================================
+
+Q-11:- Write a java program to check given number is neon number or not.
+
+package Practice;
+import java.util.Scanner;
+
+// Neon numbers:-
+// Eg 9= 9*9= 81= 8+1=9
+
+public class Q11Neon {
+	public static boolean isNeon(int n) {
+		int square=n*n;
+		int sum=0;
+		for (;square!=0;square=square/10) {
+			int lastdigit=square%10;
+			sum=sum+lastdigit;
+			}
+		if(sum==n) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter A Number");
+		int n = sc.nextInt();
+		System.out.println(isNeon(n));
+
+	}
+
+}
+
+==========================================================================================================================
+
+Q-12:- Write a java program to find power of the number.
+
+package Practice;
+import java.util.Scanner;
+
+public class Q12Power {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter A Number a");
+		int a= sc.nextInt();
+		System.out.println("Enter A Number b");
+		int b= sc.nextInt();
+		
+		int prod=1;
+		for(int i=1;i<=b;i++) {
+			prod=prod*a;
+		}
+		System.out.println(prod);
+	}
+
+}
+
+==========================================================================================================================
+
+Q-13:- Write a java program to find check given number is xylem number or phloem number.
+
+package Practice;
+import java.util.Scanner;
+
+// Xylem Number:-
+// Eg:- 13338= 1+8=9 & 3+3+3=9
+
+public class Q13XylemPhloem {
+	public static String isXylemPhloem(int n) {
+		int z=n; int count1=0; int count2=0;
+		int sum1=0; int sum2=0;
+		while(n>0) {
+			n= n/10;
+			count1++;
+		}
+		while(z>0) {
+			int lastdigit=z%10;
+			count2++;
+			if(count2==1 || count2==count1) {
+				sum1=sum1+lastdigit;
+			}else {
+				sum2=sum2+lastdigit;
+			}
+			z=z/10;
+		}
+		if(sum1==sum2) {
+			return "given number is Xylem";
+		}else {
+			return "given number is Phloem";
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter a Number");
+		int n= sc.nextInt();
+		System.out.println(isXylemPhloem(n));
+
+	}
+
+}
+
+==========================================================================================================================
+
+Q-14:- Write a java program to find check given number is armstrong number or not.
+
+package Practice;
+import java.util.Scanner;
+
+//Armstrong Number:-
+//Eg:- 153= 1*1*1 + 5*5*5 + 3*3*3= 153
+
+public class Q14Armstrong {
+	public static boolean isArmstrong(int n) {
+		int z=n;int sum=0;
+		int count=0;
+		while(z>0) {
+			z=z/10;
+			count++;
+		}
+		z=n;
+		while(z>0) {
+			int lastdigit= z%10;
+			int prod=1;
+			for(int i=1;i<=count;i++){
+				prod= prod*lastdigit;
+			}sum=sum+prod;
+			z=z/10;			
+		}
+		if(sum==n) {
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter a Number");
+		int n= sc.nextInt();
+		System.out.println(isArmstrong(n));
+	}
+
+}
+
+==========================================================================================================================
+
+Q-15:- Write a java program to find check given number is discrium number or not.
+
+package Practice;
+import java.util.Scanner;
+
+// Discrium Number:- 
+// Eg:- 175= 1 + 7*7 + 5*5*5= 1+49+125=175
+
+public class Q15Discrium {
+	public static boolean isDiscrium(int n) {
+		int z=n;int sum=0;
+		int count=0;
+		while(z>0) {
+			z=z/10;
+			count++;
+		}
+		z=n;
+		while(z>0) {
+			int lastdigit= z%10;
+			int prod=1;
+			for(int i=1;i<=count;i++){
+				prod= prod*lastdigit;
+			}
+			count--;
+			sum=sum+prod;
+			z=z/10;			
+		}
+		if(sum==n) {
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter a Number");
+		int n= sc.nextInt();
+		System.out.println(isDiscrium(n));
+		
+	}
+	}
+
+==========================================================================================================================
